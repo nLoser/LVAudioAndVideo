@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "Test.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource> {
     NSArray<NSString *> * _sectionArray;
@@ -23,6 +24,9 @@
     [self setupConfigureData];
     [self.view addSubview:self.tableView];
     [self.tableView reloadData];
+    
+    Test * test = [Test new];
+    [test readyStart];
 }
 
 #pragma mark - <UITableViewDelegate>

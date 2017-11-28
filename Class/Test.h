@@ -10,4 +10,10 @@
 
 @interface Test : NSObject
 
+- (void)readyStart;
+
+- (void)readyClose;
+
+- (void)readyDispose;
+
 @end
