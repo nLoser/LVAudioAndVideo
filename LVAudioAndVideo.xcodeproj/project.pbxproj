@@ -9,10 +9,10 @@
 /* Begin PBXBuildFile section */
 		A952E4A21FCD5D0F00E9A0D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A952E4A11FCD5D0F00E9A0D3 /* AppDelegate.m */; };
 		A952E4A51FCD5D0F00E9A0D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A952E4A41FCD5D0F00E9A0D3 /* ViewController.m */; };
-		A952E4A81FCD5D0F00E9A0D3 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A952E4A61FCD5D0F00E9A0D3 /* Main.storyboard */; };
 		A952E4AA1FCD5D0F00E9A0D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A952E4A91FCD5D0F00E9A0D3 /* Assets.xcassets */; };
 		A952E4AD1FCD5D0F00E9A0D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A952E4AB1FCD5D0F00E9A0D3 /* LaunchScreen.storyboard */; };
 		A952E4B01FCD5D0F00E9A0D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A952E4AF1FCD5D0F00E9A0D3 /* main.m */; };
+		A952E4BA1FCD643F00E9A0D3 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = A952E4B91FCD643F00E9A0D3 /* Test.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,11 +21,13 @@
 		A952E4A11FCD5D0F00E9A0D3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A952E4A31FCD5D0F00E9A0D3 /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		A952E4A41FCD5D0F00E9A0D3 /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		A952E4A71FCD5D0F00E9A0D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		A952E4A91FCD5D0F00E9A0D3 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		A952E4AC1FCD5D0F00E9A0D3 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		A952E4AE1FCD5D0F00E9A0D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A952E4AF1FCD5D0F00E9A0D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		A952E4B71FCD629800E9A0D3 /* LVAudioAndVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVAudioAndVideo.h; sourceTree = "<group>"; };
+		A952E4B81FCD643F00E9A0D3 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
+		A952E4B91FCD643F00E9A0D3 /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -42,6 +44,7 @@
 		A952E4941FCD5D0F00E9A0D3 = {
 			isa = PBXGroup;
 			children = (
+				A952E4B61FCD627100E9A0D3 /* Class */,
 				A952E49F1FCD5D0F00E9A0D3 /* LVAudioAndVideo */,
 				A952E49E1FCD5D0F00E9A0D3 /* Products */,
 			);
@@ -62,13 +65,22 @@
 				A952E4A11FCD5D0F00E9A0D3 /* AppDelegate.m */,
 				A952E4A31FCD5D0F00E9A0D3 /* ViewController.h */,
 				A952E4A41FCD5D0F00E9A0D3 /* ViewController.m */,
-				A952E4A61FCD5D0F00E9A0D3 /* Main.storyboard */,
 				A952E4A91FCD5D0F00E9A0D3 /* Assets.xcassets */,
 				A952E4AB1FCD5D0F00E9A0D3 /* LaunchScreen.storyboard */,
 				A952E4AE1FCD5D0F00E9A0D3 /* Info.plist */,
 				A952E4AF1FCD5D0F00E9A0D3 /* main.m */,
 			);
 			path = LVAudioAndVideo;
+			sourceTree = "<group>";
+		};
+		A952E4B61FCD627100E9A0D3 /* Class */ = {
+			isa = PBXGroup;
+			children = (
+				A952E4B71FCD629800E9A0D3 /* LVAudioAndVideo.h */,
+				A952E4B81FCD643F00E9A0D3 /* Test.h */,
+				A952E4B91FCD643F00E9A0D3 /* Test.m */,
+			);
+			path = Class;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -131,7 +143,6 @@
 			files = (
 				A952E4AD1FCD5D0F00E9A0D3 /* LaunchScreen.storyboard in Resources */,
 				A952E4AA1FCD5D0F00E9A0D3 /* Assets.xcassets in Resources */,
-				A952E4A81FCD5D0F00E9A0D3 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -143,6 +154,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A952E4A51FCD5D0F00E9A0D3 /* ViewController.m in Sources */,
+				A952E4BA1FCD643F00E9A0D3 /* Test.m in Sources */,
 				A952E4B01FCD5D0F00E9A0D3 /* main.m in Sources */,
 				A952E4A21FCD5D0F00E9A0D3 /* AppDelegate.m in Sources */,
 			);
@@ -151,14 +163,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		A952E4A61FCD5D0F00E9A0D3 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				A952E4A71FCD5D0F00E9A0D3 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		A952E4AB1FCD5D0F00E9A0D3 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -281,6 +285,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T4654Y4Z9R;
 				INFOPLIST_FILE = LVAudioAndVideo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LV.LVAudioAndVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -295,6 +300,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = T4654Y4Z9R;
 				INFOPLIST_FILE = LVAudioAndVideo/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = LV.LVAudioAndVideo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
