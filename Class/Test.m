@@ -76,11 +76,11 @@
     audioFormat.mSampleRate       = 44100.0;
     audioFormat.mFormatID         = kAudioFormatLinearPCM;
     audioFormat.mFormatFlags      = kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked;
-    audioFormat.mFramesPerPacket  = 1;
-    audioFormat.mChannelsPerFrame = 1;
-    audioFormat.mBitsPerChannel   = 16;
-    audioFormat.mBytesPerPacket   = 2;
-    audioFormat.mBytesPerFrame    = 2;
+    audioFormat.mFramesPerPacket  = 1; //每个数据包多少帧
+    audioFormat.mChannelsPerFrame = 1; //1单声道 2立体声
+    audioFormat.mBitsPerChannel   = 16;//语音采样点占用位数
+    audioFormat.mBytesPerPacket   = 2; //每个数据包的子节总数
+    audioFormat.mBytesPerFrame    = 2; //每帧子节数
     
     //设置格式
     status = AudioUnitSetProperty(audioUnit,
