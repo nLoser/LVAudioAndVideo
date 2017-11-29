@@ -81,7 +81,7 @@
                    @[@"rtmp推拉流"],
                    @[@"音频播放",@"视频播放"]];
     _rowsVCArray = @[@[@"AudioAcquisitionVC",@"VideoAcquisitionVC"],
-                     @[@"",@""],
+                     @[@"AudioEncodeVC",@""],
                      @[@"",@""],
                      @[@""],
                      @[@"",@""]];

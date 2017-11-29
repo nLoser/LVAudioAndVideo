@@ -15,6 +15,7 @@
 		A952E4AD1FCD5D0F00E9A0D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A952E4AB1FCD5D0F00E9A0D3 /* LaunchScreen.storyboard */; };
 		A952E4B01FCD5D0F00E9A0D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A952E4AF1FCD5D0F00E9A0D3 /* main.m */; };
 		A9BE03EA1FCEED1900434E75 /* AudioAcquistionNote in Resources */ = {isa = PBXBuildFile; fileRef = A9BE03E91FCEED1900434E75 /* AudioAcquistionNote */; };
+		A9F6B6791FCF0EDF008884D5 /* AudioEncodeVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A9F6B6781FCF0EDF008884D5 /* AudioEncodeVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,8 @@
 		A952E4AF1FCD5D0F00E9A0D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A952E4B71FCD629800E9A0D3 /* LVAudioAndVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVAudioAndVideo.h; sourceTree = "<group>"; };
 		A9BE03E91FCEED1900434E75 /* AudioAcquistionNote */ = {isa = PBXFileReference; lastKnownFileType = text; path = AudioAcquistionNote; sourceTree = "<group>"; };
+		A9F6B6771FCF0EDF008884D5 /* AudioEncodeVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioEncodeVC.h; sourceTree = "<group>"; };
+		A9F6B6781FCF0EDF008884D5 /* AudioEncodeVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioEncodeVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -61,6 +64,8 @@
 		A90B00A81FCE4BA9003F1B08 /* Encode */ = {
 			isa = PBXGroup;
 			children = (
+				A9F6B6771FCF0EDF008884D5 /* AudioEncodeVC.h */,
+				A9F6B6781FCF0EDF008884D5 /* AudioEncodeVC.m */,
 			);
 			path = Encode;
 			sourceTree = "<group>";
@@ -203,6 +208,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A90B00AE1FCE4C92003F1B08 /* AudioAcquisitionVC.m in Sources */,
+				A9F6B6791FCF0EDF008884D5 /* AudioEncodeVC.m in Sources */,
 				A952E4A51FCD5D0F00E9A0D3 /* ViewController.m in Sources */,
 				A952E4B01FCD5D0F00E9A0D3 /* main.m in Sources */,
 				A90B00B11FCE4CAC003F1B08 /* VideoAcquisitionVC.m in Sources */,

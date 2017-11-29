@@ -12,5 +12,7 @@
 #import "AudioAcquisitionVC.h"
 #import "VideoAcquisitionVC.h"
 
+#import "AudioEncodeVC.h"
+
 
 #endif /* LVAudioAndVideo_h */
