@@ -7,11 +7,12 @@
 //
 
 #import "ViewController.h"
-#import "Test.h"
+#import "LVAudioAndVideo.h"
 
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource> {
     NSArray<NSString *> * _sectionArray;
     NSArray<NSArray<NSString *> *> * _rowsArray;
+    NSArray<NSArray<NSString *> *> * _rowsVCArray;
 }
 @property (nonatomic, strong) UITableView * tableView;
 @end
@@ -24,15 +25,20 @@
     [self setupConfigureData];
     [self.view addSubview:self.tableView];
     [self.tableView reloadData];
-    
-    Test * test = [Test new];
-    [test readyStart];
 }
 
 #pragma mark - <UITableViewDelegate>
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
-    
+    [self pushVC:_rowsVCArray[indexPath.section][indexPath.row]
+           title:_rowsArray[indexPath.section][indexPath.row]];
+}
+
+- (void)pushVC:(NSString *)classname title:(NSString *)title{
+    if(classname.length == 0) return;
+    UIViewController * vc = [[NSClassFromString(classname) alloc] init];
+    vc.title = title;
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section {
@@ -61,7 +67,16 @@
 
 - (void)setupConfigureData {
     _sectionArray = @[@"采集",@"编码",@"解码",@"传输",@"渲染与播放"];
-    _rowsArray = @[@[@"音频采集",@"视频采集"],@[@"音频编码",@"视频编码"],@[@"音频解码",@"视频解码"],@[@"rtmp推拉流"],@[@"音频播放",@"视频播放"]];
+    _rowsArray = @[@[@"音频采集",@"视频采集"],
+                   @[@"音频编码",@"视频编码"],
+                   @[@"音频解码",@"视频解码"],
+                   @[@"rtmp推拉流"],
+                   @[@"音频播放",@"视频播放"]];
+    _rowsVCArray = @[@[@"AudioAcquisitionVC",@"VideoAcquisitionVC"],
+                     @[@"",@""],
+                     @[@"",@""],
+                     @[@""],
+                     @[@"",@""]];
 }
 
 - (UITableView *)tableView {

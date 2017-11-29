@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A90B00AE1FCE4C92003F1B08 /* AudioAcquisitionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A90B00AD1FCE4C92003F1B08 /* AudioAcquisitionVC.m */; };
+		A90B00B11FCE4CAC003F1B08 /* VideoAcquisitionVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A90B00B01FCE4CAC003F1B08 /* VideoAcquisitionVC.m */; };
 		A952E4A21FCD5D0F00E9A0D3 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A952E4A11FCD5D0F00E9A0D3 /* AppDelegate.m */; };
 		A952E4A51FCD5D0F00E9A0D3 /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A952E4A41FCD5D0F00E9A0D3 /* ViewController.m */; };
 		A952E4AA1FCD5D0F00E9A0D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A952E4A91FCD5D0F00E9A0D3 /* Assets.xcassets */; };
@@ -16,6 +18,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A90B00AC1FCE4C92003F1B08 /* AudioAcquisitionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AudioAcquisitionVC.h; sourceTree = "<group>"; };
+		A90B00AD1FCE4C92003F1B08 /* AudioAcquisitionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AudioAcquisitionVC.m; sourceTree = "<group>"; };
+		A90B00AF1FCE4CAC003F1B08 /* VideoAcquisitionVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = VideoAcquisitionVC.h; sourceTree = "<group>"; };
+		A90B00B01FCE4CAC003F1B08 /* VideoAcquisitionVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = VideoAcquisitionVC.m; sourceTree = "<group>"; };
 		A952E49D1FCD5D0F00E9A0D3 /* LVAudioAndVideo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LVAudioAndVideo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		A952E4A01FCD5D0F00E9A0D3 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A952E4A11FCD5D0F00E9A0D3 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -41,6 +47,45 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A90B00A71FCE4B7A003F1B08 /* Acquisition */ = {
+			isa = PBXGroup;
+			children = (
+				A90B00AC1FCE4C92003F1B08 /* AudioAcquisitionVC.h */,
+				A90B00AD1FCE4C92003F1B08 /* AudioAcquisitionVC.m */,
+				A90B00AF1FCE4CAC003F1B08 /* VideoAcquisitionVC.h */,
+				A90B00B01FCE4CAC003F1B08 /* VideoAcquisitionVC.m */,
+			);
+			path = Acquisition;
+			sourceTree = "<group>";
+		};
+		A90B00A81FCE4BA9003F1B08 /* Encode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Encode;
+			sourceTree = "<group>";
+		};
+		A90B00A91FCE4BB3003F1B08 /* Decode */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Decode;
+			sourceTree = "<group>";
+		};
+		A90B00AA1FCE4BC9003F1B08 /* Transfer */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Transfer;
+			sourceTree = "<group>";
+		};
+		A90B00AB1FCE4BDC003F1B08 /* Render */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Render;
+			sourceTree = "<group>";
+		};
 		A952E4941FCD5D0F00E9A0D3 = {
 			isa = PBXGroup;
 			children = (
@@ -77,6 +122,11 @@
 			isa = PBXGroup;
 			children = (
 				A952E4B71FCD629800E9A0D3 /* LVAudioAndVideo.h */,
+				A90B00AB1FCE4BDC003F1B08 /* Render */,
+				A90B00AA1FCE4BC9003F1B08 /* Transfer */,
+				A90B00A91FCE4BB3003F1B08 /* Decode */,
+				A90B00A81FCE4BA9003F1B08 /* Encode */,
+				A90B00A71FCE4B7A003F1B08 /* Acquisition */,
 				A952E4B81FCD643F00E9A0D3 /* Test.h */,
 				A952E4B91FCD643F00E9A0D3 /* Test.m */,
 			);
@@ -153,9 +203,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A90B00AE1FCE4C92003F1B08 /* AudioAcquisitionVC.m in Sources */,
 				A952E4A51FCD5D0F00E9A0D3 /* ViewController.m in Sources */,
 				A952E4BA1FCD643F00E9A0D3 /* Test.m in Sources */,
 				A952E4B01FCD5D0F00E9A0D3 /* main.m in Sources */,
+				A90B00B11FCE4CAC003F1B08 /* VideoAcquisitionVC.m in Sources */,
 				A952E4A21FCD5D0F00E9A0D3 /* AppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

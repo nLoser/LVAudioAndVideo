@@ -9,5 +9,8 @@
 #ifndef LVAudioAndVideo_h
 #define LVAudioAndVideo_h
 
+#import "AudioAcquisitionVC.h"
+#import "VideoAcquisitionVC.h"
+
 
 #endif /* LVAudioAndVideo_h */
