@@ -17,13 +17,22 @@
     AudioStreamBasicDescription audioFormat; ///< 描述音频格式
     AudioBufferList bufferList; ///< 缓冲区
 }
+@property (nonatomic, strong) UISegmentedControl * control;
 @end
 
 @implementation AudioAcquisitionVC
 
+- (instancetype)init {
+    if (self = [super init]) {
+        [self configure];
+    }
+    return self;
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    [self.view addSubview:self.control];
 }
 
 #pragma mark - configure
@@ -104,7 +113,7 @@
     status = AudioUnitSetProperty(audioUnit,
                                   kAudioUnitProperty_ShouldAllocateBuffer,
                                   kAudioUnitScope_Output,
-                                  kInputBus,
+                                  kInputBus, //Element1 和 outputScope的交集
                                   &flag,
                                   sizeof(flag));
     
@@ -136,4 +145,51 @@ OSStatus outputCallback(void *                            inRefCon,
     return noErr;
 }
 
+- (void)audioOutputUnitStart {
+    OSStatus status = AudioOutputUnitStart(audioUnit);
+    NSLog(@"%d",status);
+}
+
+- (void)audioOutputUnitStop {
+    OSStatus status = AudioOutputUnitStop(audioUnit);
+    NSLog(@"%d",status);
+}
+
+- (void)audioComponentInstanceDispose {
+    AudioComponentInstanceDispose(audioUnit);
+}
+
+- (void)click:(UISegmentedControl *)control {
+    switch (control.selectedSegmentIndex) {
+        case 0:
+            [self audioOutputUnitStart];
+            break;
+        case 1:
+            [self audioOutputUnitStop];
+            break;
+        case 2:
+            [self audioComponentInstanceDispose];
+            break;
+        default:
+            break;
+    }
+}
+
+#pragma mark - Getter
+
+- (UISegmentedControl *)control {
+    if (!_control) {
+        NSArray * arr = @[@"开始采集",@"关闭采集",@"结束采集"];
+        _control = [[UISegmentedControl alloc] initWithItems:arr];
+        [_control addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _control;
+}
+
 @end
+
+
+
+
+
+
