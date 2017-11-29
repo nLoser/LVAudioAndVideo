@@ -36,7 +36,7 @@
 }
 
 - (void)dealloc {
-    [self audioComponentInstanceDispose];
+    audioUnit = nil;
 }
 
 #pragma mark - configure
