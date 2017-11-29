@@ -15,6 +15,7 @@
 		A952E4AD1FCD5D0F00E9A0D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A952E4AB1FCD5D0F00E9A0D3 /* LaunchScreen.storyboard */; };
 		A952E4B01FCD5D0F00E9A0D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A952E4AF1FCD5D0F00E9A0D3 /* main.m */; };
 		A952E4BA1FCD643F00E9A0D3 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = A952E4B91FCD643F00E9A0D3 /* Test.m */; };
+		A9BE03EA1FCEED1900434E75 /* AudioAcquistionNote in Resources */ = {isa = PBXBuildFile; fileRef = A9BE03E91FCEED1900434E75 /* AudioAcquistionNote */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -34,6 +35,7 @@
 		A952E4B71FCD629800E9A0D3 /* LVAudioAndVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVAudioAndVideo.h; sourceTree = "<group>"; };
 		A952E4B81FCD643F00E9A0D3 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
 		A952E4B91FCD643F00E9A0D3 /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
+		A9BE03E91FCEED1900434E75 /* AudioAcquistionNote */ = {isa = PBXFileReference; lastKnownFileType = text; path = AudioAcquistionNote; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 				A90B00AD1FCE4C92003F1B08 /* AudioAcquisitionVC.m */,
 				A90B00AF1FCE4CAC003F1B08 /* VideoAcquisitionVC.h */,
 				A90B00B01FCE4CAC003F1B08 /* VideoAcquisitionVC.m */,
+				A9BE03E91FCEED1900434E75 /* AudioAcquistionNote */,
 			);
 			path = Acquisition;
 			sourceTree = "<group>";
@@ -191,6 +194,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A9BE03EA1FCEED1900434E75 /* AudioAcquistionNote in Resources */,
 				A952E4AD1FCD5D0F00E9A0D3 /* LaunchScreen.storyboard in Resources */,
 				A952E4AA1FCD5D0F00E9A0D3 /* Assets.xcassets in Resources */,
 			);

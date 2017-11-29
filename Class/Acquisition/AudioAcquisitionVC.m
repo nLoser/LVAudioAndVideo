@@ -7,9 +7,16 @@
 //
 
 #import "AudioAcquisitionVC.h"
+#import <AudioToolbox/AudioUnit.h>
 
-@interface AudioAcquisitionVC ()
+#define kInputBus  1
+#define kOutputBus 0
 
+@interface AudioAcquisitionVC () {
+    AudioComponentInstance audioUnit; ///< AudioUnit
+    AudioStreamBasicDescription audioFormat; ///< 描述音频格式
+    AudioBufferList bufferList; ///< 缓冲区
+}
 @end
 
 @implementation AudioAcquisitionVC
@@ -17,22 +24,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
-    // Do any additional setup after loading the view.
 }
 
-- (void)didReceiveMemoryWarning {
-    [super didReceiveMemoryWarning];
-    // Dispose of any resources that can be recreated.
+#pragma mark - configure
+
+- (void)configure {
+    OSStatus status;
+    
+    //创建AuidoUnit
+    AudioComponentDescription compoentDesc;
+    compoentDesc.componentType = kAudioUnitType_Output;
+    compoentDesc.componentSubType = kAudioUnitSubType_RemoteIO;
+    compoentDesc.componentFlags = 0;
+    compoentDesc.componentFlagsMask = 0;
+    compoentDesc.componentManufacturer = kAudioUnitManufacturer_Apple;
 }
 
-/*
-#pragma mark - Navigation
+#pragma mark - Private Method
 
-// In a storyboard-based application, you will often want to do a little preparation before navigation
-- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
-    // Get the new view controller using [segue destinationViewController].
-    // Pass the selected object to the new view controller.
-}
-*/
+
 
 @end

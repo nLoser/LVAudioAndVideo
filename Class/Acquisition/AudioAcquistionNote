@@ -1,0 +1,59 @@
+
+1.AudioComponentDescription
+
+它用来描述音频组件(Audio Component)的唯一标识和标识结构。
+
+#pragma pack(push, 4)
+typedef struct AudioComponentDescription {
+OSType              componentType;          ///< 组件通用的四子节标识
+OSType              componentSubType;       ///< 对应type的类型
+OSType              componentManufacturer;  ///< 厂商的身份验证
+UInt32              componentFlags;         ///< 没有明确指定值，必须设置0
+UInt32              componentFlagsMask;     ///< 没有明确指定值，必须设置0
+} AudioComponentDescription;
+#pragma pack(pop)
+
+AudioComponentDescription对应的7种
+
+##Effect
+
+>iPod Equalizer unit
+    kAudioUnitType_Effect
+    kAudioUnitSubType_AuiPodEQ
+
+##Mixing
+
+>3D Mixer unit
+    kAudioUnitType_Mixer
+    kAudioUnitSubType_AU3DMixerEmbedded
+
+>Multichannel Mixer unit
+    kAudioUnitType_Mixer
+    kAudioUnitSubType_MultiChannelMixer
+
+##I/O
+
+>Remote I/O unit
+    kAudioUnitType_Output
+    kAudioUnitSubType_RemoteIO
+
+>Voice Processing I/O unit
+    kAudioUnitType_Output
+    kAudioUnitSubType_VoiceProcessingIO
+
+##Format conversion
+
+>Converter unit
+    kAudioUnitType_FormatConverter
+    kAudioUnitSubType_AUConverter
+
+
+
+
+
+
+
+
+
+
+
