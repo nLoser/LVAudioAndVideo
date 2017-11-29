@@ -50,6 +50,26 @@ AudioComponentDescription对应的7种
     kAudioUnitSubType_AUConverter
 
 
+2.AURenderCallbackStruct
+
+它绑定回调当Audio Unit提供输入。
+
+typedef struct AURenderCallbackStruct {
+AURenderCallback __nullable    inputProc;
+void * __nullable            inputProcRefCon;
+} AURenderCallbackStruct;
+
+
+AURenderCallback指明回调函数的返回值
+
+typedef OSStatus
+(*AURenderCallback)(    void *                            inRefCon,
+                        AudioUnitRenderActionFlags *    ioActionFlags,
+                        const AudioTimeStamp *            inTimeStamp,
+                        UInt32                            inBusNumber,
+                        UInt32                            inNumberFrames,
+                        AudioBufferList * __nullable    ioData);
+
 
 
 
