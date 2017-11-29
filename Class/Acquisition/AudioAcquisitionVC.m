@@ -35,6 +35,10 @@
     [self.view addSubview:self.control];
 }
 
+- (void)dealloc {
+    [self audioComponentInstanceDispose];
+}
+
 #pragma mark - configure
 
 - (void)configure {
@@ -161,13 +165,15 @@ OSStatus outputHandleCallback(void *                            inRefCon,
                         UInt32                            inNumberFrames,
                         AudioBufferList * __nullable    ioData)
 {
-    NSLog(@"--%d",ioData->mBuffers[0].mData);
+    NSLog(@"%d",(unsigned int)inBusNumber);
     return noErr;
 }
 
 static void checkStatus(OSStatus status) {
     if (status != noErr) {
-        NSLog(@"%d",status);
+        NSLog(@"%d",(int)status);
+    }else {
+        NSLog(@"success");
     }
 }
 
@@ -175,16 +181,17 @@ static void checkStatus(OSStatus status) {
 
 - (void)audioOutputUnitStart {
     OSStatus status = AudioOutputUnitStart(audioUnit);
-    NSLog(@"%d",status);
+    checkStatus(status);
 }
 
 - (void)audioOutputUnitStop {
     OSStatus status = AudioOutputUnitStop(audioUnit);
-    NSLog(@"%d",status);
+    checkStatus(status);
 }
 
 - (void)audioComponentInstanceDispose {
     AudioComponentInstanceDispose(audioUnit);
+    [self.navigationController popToRootViewControllerAnimated:YES];
 }
 
 - (void)click:(UISegmentedControl *)control {
@@ -210,7 +217,7 @@ static void checkStatus(OSStatus status) {
         NSArray * arr = @[@"开始采集",@"关闭采集",@"结束采集"];
         _control = [[UISegmentedControl alloc] initWithItems:arr];
         _control.frame = CGRectMake(0, 100, CGRectGetWidth(self.view.frame), 50);
-        [_control addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
+        [_control addTarget:self action:@selector(click:) forControlEvents:UIControlEventValueChanged];
     }
     return _control;
 }
