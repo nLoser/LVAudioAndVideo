@@ -14,7 +14,6 @@
 		A952E4AA1FCD5D0F00E9A0D3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A952E4A91FCD5D0F00E9A0D3 /* Assets.xcassets */; };
 		A952E4AD1FCD5D0F00E9A0D3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = A952E4AB1FCD5D0F00E9A0D3 /* LaunchScreen.storyboard */; };
 		A952E4B01FCD5D0F00E9A0D3 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A952E4AF1FCD5D0F00E9A0D3 /* main.m */; };
-		A952E4BA1FCD643F00E9A0D3 /* Test.m in Sources */ = {isa = PBXBuildFile; fileRef = A952E4B91FCD643F00E9A0D3 /* Test.m */; };
 		A9BE03EA1FCEED1900434E75 /* AudioAcquistionNote in Resources */ = {isa = PBXBuildFile; fileRef = A9BE03E91FCEED1900434E75 /* AudioAcquistionNote */; };
 /* End PBXBuildFile section */
 
@@ -33,8 +32,6 @@
 		A952E4AE1FCD5D0F00E9A0D3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		A952E4AF1FCD5D0F00E9A0D3 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A952E4B71FCD629800E9A0D3 /* LVAudioAndVideo.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVAudioAndVideo.h; sourceTree = "<group>"; };
-		A952E4B81FCD643F00E9A0D3 /* Test.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Test.h; sourceTree = "<group>"; };
-		A952E4B91FCD643F00E9A0D3 /* Test.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = Test.m; sourceTree = "<group>"; };
 		A9BE03E91FCEED1900434E75 /* AudioAcquistionNote */ = {isa = PBXFileReference; lastKnownFileType = text; path = AudioAcquistionNote; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -130,8 +127,6 @@
 				A90B00A91FCE4BB3003F1B08 /* Decode */,
 				A90B00A81FCE4BA9003F1B08 /* Encode */,
 				A90B00A71FCE4B7A003F1B08 /* Acquisition */,
-				A952E4B81FCD643F00E9A0D3 /* Test.h */,
-				A952E4B91FCD643F00E9A0D3 /* Test.m */,
 			);
 			path = Class;
 			sourceTree = "<group>";
@@ -209,7 +204,6 @@
 			files = (
 				A90B00AE1FCE4C92003F1B08 /* AudioAcquisitionVC.m in Sources */,
 				A952E4A51FCD5D0F00E9A0D3 /* ViewController.m in Sources */,
-				A952E4BA1FCD643F00E9A0D3 /* Test.m in Sources */,
 				A952E4B01FCD5D0F00E9A0D3 /* main.m in Sources */,
 				A90B00B11FCE4CAC003F1B08 /* VideoAcquisitionVC.m in Sources */,
 				A952E4A21FCD5D0F00E9A0D3 /* AppDelegate.m in Sources */,
