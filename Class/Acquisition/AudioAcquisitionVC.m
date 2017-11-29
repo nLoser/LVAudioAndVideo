@@ -50,6 +50,7 @@
     
     AudioComponent inputComponent = AudioComponentFindNext(NULL, &compoentDesc);
     status = AudioComponentInstanceNew(inputComponent, &audioUnit);
+    checkStatus(status);
     
     //[2]为录制播放开启IO
     UInt32 flag = 1;
@@ -59,12 +60,14 @@
                                   kInputBus,
                                   &flag,
                                   sizeof(flag));
+    checkStatus(status);
     status = AudioUnitSetProperty(audioUnit,
                                   kAudioOutputUnitProperty_EnableIO,
                                   kAudioUnitScope_Output,
                                   kOutputBus,
                                   &flag,
                                   sizeof(flag));
+    checkStatus(status);
     
     //[3]描述音频格式
     audioFormat.mFormatFlags = kAudioFormatFlagIsSignedInteger | kAudioFormatFlagIsPacked;
@@ -78,35 +81,40 @@
     status = AudioUnitSetProperty(audioUnit,
                                   kAudioUnitProperty_StreamFormat,
                                   kAudioUnitScope_Input,
-                                  kInputBus,
-                                  &audioFormat,
-                                  sizeof(audioFormat));
-    status = AudioUnitSetProperty(audioUnit,
-                                  kAudioUnitProperty_StreamFormat,
-                                  kAudioUnitScope_Output,
                                   kOutputBus,
                                   &audioFormat,
                                   sizeof(audioFormat));
+    checkStatus(status);
+    status = AudioUnitSetProperty(audioUnit,
+                                  kAudioUnitProperty_StreamFormat,
+                                  kAudioUnitScope_Output,
+                                  kInputBus,
+                                  &audioFormat,
+                                  sizeof(audioFormat));
+    checkStatus(status);
     
     //[4]为录制播放设置回调函数
     AURenderCallbackStruct inputCallbackStruct;
-    inputCallbackStruct.inputProcRefCon = (__bridge void * _Nullable)(self);
-    inputCallbackStruct.inputProc = inputCallback;
+    inputCallbackStruct.inputProc = inputHandleCallback;
+    inputCallbackStruct.inputProcRefCon = (__bridge void *)(self);
     status = AudioUnitSetProperty(audioUnit,
                                   kAudioOutputUnitProperty_SetInputCallback,
                                   kAudioUnitScope_Global,
                                   kInputBus,
                                   &inputCallbackStruct,
                                   sizeof(inputCallbackStruct));
+    checkStatus(status);
+    
     AURenderCallbackStruct outputCallbackkStruct;
-    outputCallbackkStruct.inputProcRefCon = (__bridge void * _Nullable)(self);
-    outputCallbackkStruct.inputProc = outputCallback;
+    outputCallbackkStruct.inputProc = outputHandleCallback;
+    outputCallbackkStruct.inputProcRefCon = (__bridge void *)(self);
     status = AudioUnitSetProperty(audioUnit,
                                   kAudioUnitProperty_SetRenderCallback,
                                   kAudioUnitScope_Global,
                                   kOutputBus,
                                   &outputCallbackkStruct,
                                   sizeof(outputCallbackkStruct));
+    checkStatus(status);
     
     //[5]使用自己分配的缓冲区，关闭系统提供的缓冲区
     flag = 0;
@@ -116,14 +124,16 @@
                                   kInputBus, //Element1 和 outputScope的交集
                                   &flag,
                                   sizeof(flag));
+    checkStatus(status);
     
     //[6]实例化Audio Unit
     status = AudioUnitInitialize(audioUnit);
+    checkStatus(status);
 }
 
 #pragma mark - Private Method
 
-OSStatus inputCallback(void *                            inRefCon,
+OSStatus inputHandleCallback(void *                            inRefCon,
                        AudioUnitRenderActionFlags *    ioActionFlags,
                        const AudioTimeStamp *            inTimeStamp,
                        UInt32                            inBusNumber,
@@ -131,19 +141,37 @@ OSStatus inputCallback(void *                            inRefCon,
                        AudioBufferList * __nullable    ioData)
 {
     
+    AudioAcquisitionVC * THIS = (__bridge AudioAcquisitionVC *)inRefCon;
+    
+    OSStatus status;
+    status = AudioUnitRender(THIS->audioUnit,
+                             ioActionFlags,
+                             inTimeStamp,
+                             inBusNumber,
+                             inNumberFrames,
+                             &(THIS->bufferList));
+    
     return noErr;
 }
 
-OSStatus outputCallback(void *                            inRefCon,
+OSStatus outputHandleCallback(void *                            inRefCon,
                         AudioUnitRenderActionFlags *    ioActionFlags,
                         const AudioTimeStamp *            inTimeStamp,
                         UInt32                            inBusNumber,
                         UInt32                            inNumberFrames,
                         AudioBufferList * __nullable    ioData)
 {
-    
+    NSLog(@"--%d",ioData->mBuffers[0].mData);
     return noErr;
 }
+
+static void checkStatus(OSStatus status) {
+    if (status != noErr) {
+        NSLog(@"%d",status);
+    }
+}
+
+#pragma mark - Target Action
 
 - (void)audioOutputUnitStart {
     OSStatus status = AudioOutputUnitStart(audioUnit);
@@ -181,6 +209,7 @@ OSStatus outputCallback(void *                            inRefCon,
     if (!_control) {
         NSArray * arr = @[@"开始采集",@"关闭采集",@"结束采集"];
         _control = [[UISegmentedControl alloc] initWithItems:arr];
+        _control.frame = CGRectMake(0, 100, CGRectGetWidth(self.view.frame), 50);
         [_control addTarget:self action:@selector(click:) forControlEvents:UIControlEventTouchUpInside];
     }
     return _control;
