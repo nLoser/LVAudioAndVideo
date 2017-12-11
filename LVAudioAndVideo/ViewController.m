@@ -9,6 +9,8 @@
 #import "ViewController.h"
 #import "LVAudioAndVideo.h"
 
+#import "LVUtility.h"
+
 @interface ViewController ()<UITableViewDelegate,UITableViewDataSource> {
     NSArray<NSString *> * _sectionArray;
     NSArray<NSArray<NSString *> *> * _rowsArray;
@@ -25,6 +27,8 @@
     [self setupConfigureData];
     [self.view addSubview:self.tableView];
     [self.tableView reloadData];
+    
+    [[LVUtility alloc] init];
 }
 
 #pragma mark - <UITableViewDelegate>

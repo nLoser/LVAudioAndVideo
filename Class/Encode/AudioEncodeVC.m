@@ -7,9 +7,13 @@
 //
 
 #import "AudioEncodeVC.h"
+#import <AudioToolbox/AudioConverter.h>
 
-@interface AudioEncodeVC ()
+#import <AudioToolbox/AudioToolbox.h>
 
+@interface AudioEncodeVC () {
+    AudioStreamBasicDescription outputAudioStreamBasicDescription;
+}
 @end
 
 @implementation AudioEncodeVC
@@ -17,6 +21,35 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     self.view.backgroundColor = [UIColor whiteColor];
+    [self configure];
+}
+
+- (void)configure {
+    
 }
 
 @end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

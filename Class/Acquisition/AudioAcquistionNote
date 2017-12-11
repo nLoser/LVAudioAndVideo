@@ -70,8 +70,23 @@ typedef OSStatus
                         UInt32                            inNumberFrames,
                         AudioBufferList * __nullable    ioData);
 
+3.AudioStreamBasicDescription
 
+它的结构可以满足所有固定码率格式。
 
+struct AudioStreamBasicDescription
+{
+Float64             mSampleRate;
+AudioFormatID       mFormatID;
+AudioFormatFlags    mFormatFlags;
+UInt32              mBytesPerPacket;
+UInt32              mFramesPerPacket;
+UInt32              mBytesPerFrame;
+UInt32              mChannelsPerFrame;
+UInt32              mBitsPerChannel;
+UInt32              mReserved;
+};
+typedef struct AudioStreamBasicDescription  AudioStreamBasicDescription;
 
 
 
