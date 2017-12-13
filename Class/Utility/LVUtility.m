@@ -73,6 +73,19 @@ static void LVTransiaction(){
         //[NSThread currentThread];
         //pthread_main_np();
         //pthread_self();
+        
+        //model item
+        //UITrackingRunLoopMode
+        //kCFRunLoopCommonModes
+        //kCFRunLoopDefaultMode
+        //NSRunLoopCommonModes
+        //[[NSRunLoop mainRunLoop] addTimer:[NSTimer new] forMode:NSRunLoopCommonModes];
+        
+        //[NSRunLoop currentRunLoop];// 创建了当前runloop
+        
+        //runloop 创建是在第一次获取时
+        
+        
     }
     return self;
 }
